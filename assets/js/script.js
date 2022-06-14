@@ -60,16 +60,16 @@ function Create_Button(){
 	
 	document.getElementById("shop_list").appendChild(newDiv);
 	diaplay_shop_info(0);
-	movie();
+	console.log(result);
  }
 
  function diaplay_shop_info(id){
 	document.getElementById("name").innerHTML=result[id].name;
-	document.getElementById("address").innerHTML=result[id].street+" , "+result[id].city+" , "+result[id].state+", United State.";
-	document.getElementById("phone").innerHTML=result[id].phone;
+	document.getElementById("address").innerHTML="Addr: "+result[id].street+" , "+result[id].city+" , "+result[id].state+", United State.";
+	document.getElementById("phone").innerHTML="Phone: "+result[id].phone;
 	document.getElementById("url").innerHTML=result[id].url;
 	document.getElementById("url").herf=result[id].url;
-	document.getElementById("type").innerHTML=result[id].type;
+	document.getElementById("type").innerHTML="Type: "+result[id].type;
 	display_id=id;
 
  }
@@ -141,35 +141,6 @@ function check_postal_code(postal_code,pos,color) {
 
 
 
-function movie(){
-
-	var url= 'https://serpapi.com/search.json?q=AMC+Barton+Creek+Square+14&location=aurora+Canada&hl=en&gl=us&api_key=a9538161cd29bef87d1f6d9a0e83d81ed90eee4613eb669c3ddd61740f959337';
-	fetch(url, { 
-			headers: {
-				'Content-type': 'text/html'
-			},
-
-
-
-
-
-	})
-	.then(function(response) { 
-	  if (response.status >= 200 && response.status <= 299) {
-		return response.json();
-	  } else {      
-		throw Error(response.status+" "+response.statusText);
-	  }
-	  }) // Convert data to json
-	  .then(function(data) {
-		console.log(data);
-  })
-	  .catch(function(error) {
-		console.log(error);
- 	  });
-  }
-
-
 function brewery_name(city_name,lat,lon){
 	display_city= city_name.charAt(0).toUpperCase() + city_name.slice(1);
 	var lat,lon;
@@ -220,9 +191,3 @@ function searchButtonHandler(event){
 
 fetchButton.addEventListener('click', searchButtonHandler);
 document.querySelector("#shop_list").addEventListener("click", historyButtonHandler);
-
-
-
-
-
-
