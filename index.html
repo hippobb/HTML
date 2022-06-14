@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Brewery Dashboard</title>
+</head>
+
+<body>
+    <header class="row justify-content-cend ">
+        <h1>Brewery Dashboard</h1>
+    </header>
+
+  <mainbody class="container">
+    <section class="row">      
+      <div class="col-15 col-md-2">
+          <div class="col-12 col-md-3:w-100 search_area" id="search_area">
+            <form >
+              <label for="location" class="label"><b>Search for a city:</b></label><br>
+              <input type="text" id="city_name" class="city_name w-100" name="city_name" value="Chicago">
+              <button type="button" id="search" class="btn btn-primary w-100">Search</button>
+            </form> 
+          </div>
+          <div class="row" id="shop_list"> 
+          <div class="col-12 col-md-3:w-100  history" id="history"></div>
+          </div>
+        </div>
+      
+      <div class="col-12 col-md-10">
+        <section class="row justify-content-start shop" id="shop">
+          <div id="shop_detail">
+            <h2 id="name"></h2>
+            <p id="address"></p>            
+            <p id="phone"></p>          
+            <p id="type"></p>          
+            <a id="url" href="https://spotify.com"> </a>                  
+          </div>
+        </section>
+        <section class="row justify-content-start" id="forecast_header">
+          <div id="map" class="col-12 col-md-3 map"></div>
+        </section>
+      </div>
+    </section>
+
+    <hr />
+    <!-- justify-content-center changes the alignment of flex items to center axis -->
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ury2VC7bslPGGb5hP-9OUTPdMF1fiIY" async defer></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
