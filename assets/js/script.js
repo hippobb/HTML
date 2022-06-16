@@ -235,7 +235,7 @@ function mouseout(){
 
 function marker_over(pos){
 	var infowindow = new google.maps.InfoWindow();
-	infowindow.setContent('<div class="map header">'+result[pos].name+'</div>');
+	infowindow.setContent('<h3 class="map header">'+result[pos].name+'</h3>');
 	for(var i=0;i<result.length;i++){
 		if (pos==markersArray[i].id) match=i;
 	}
