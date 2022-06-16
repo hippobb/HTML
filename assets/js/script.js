@@ -96,7 +96,7 @@ function check_location(c_name) {
 	display_city= c_name.charAt(0).toUpperCase() + c_name.slice(1);
 	var lat,lon;
   	var url= 'https://maps.googleapis.com/maps/api/geocode/json?address='+c_name+'&key='+googlekey;
-
+	console.log(url);
 	fetch(url)  
 		.then(function(response) { 
 		if (response.status >= 200 && response.status <= 299) {
@@ -106,6 +106,7 @@ function check_location(c_name) {
 		}
 		}) // Convert data to json
 		.then(function(data) {
+			console.log(data);
 			lat=data.results[0].geometry.location.lat;
 			lon=data.results[0].geometry.location.lng;
 			brewery_name(c_name);
@@ -155,13 +156,15 @@ function check_postal_code(postal_code,pos,dis_effect) {
 			google.maps.event.addListener(marker, "mouseout", (e) => {
 				mouseout();
 			});
+			google.maps.event.addListener(marker,"touchstart",(e) => {
+				marker_click(pos);
+			});
 			markersArray.push(marker);
 		})
 
 		.catch(function(error) {
 			console.log(error);
 		});
-		console.log(markersArray);
 }
 
 function clearAnimation() {
@@ -177,7 +180,7 @@ function brewery_name(city_name){
 	display_city= city_name.charAt(0).toUpperCase() + city_name.slice(1);
 	result=[];
 	markersArray=[];
-  	var url= 'https://api.openbrewerydb.org/breweries?by_city='+city_name.replace(" ","_")+'&per_page=20';
+  	var url= 'https://api.openbrewerydb.org/breweries?by_city='+city_name.replace(" ","_")+'&per_page=12';
 
 	fetch(url)  
 	.then(function(response) { 
