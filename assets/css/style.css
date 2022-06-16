@@ -34,19 +34,14 @@ text-align: center;
     height:40px;
     
 }
-.current{
+.shop{
     border-style: solid;
     text-align: left;
     margin-bottom:30px ;
+    height:200px;
 }
-.card{
-    background-color: rgb(14, 66, 111);
-    color:white;
-    height: 260px;
-    margin: 5px;
-}
-h3{
-    font-size:24px;
+h2{
+    margin-left: 5%; 
 }
 .icon{
     width:60px;
@@ -64,25 +59,18 @@ p{
     margin-bottom: 0;
     display: flex;
 }
-.card{
-    display:block;
-}
-.index{
-    display:inline;
-    text-align: start;
-}
-.forecast
-,.forecast_header{
-    display:none;
-}
+
+
 #map {
-    height: 250px;
-    width: 400px;
+    height:800px;;
+    width: 100%;
     margin-top: 15px;
   }
-#current_detail{
-max-width: 60%;
-}
+
 .text-reponsive{
     font-size:calc(100%+1vw+1vh);
+}
+#url{
+    
+    margin-left: 5%; 
 }

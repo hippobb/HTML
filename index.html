@@ -5,84 +5,41 @@
   <meta charset="UTF-8"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Weather Dashboard</title>
+  <title>Brewery Dashboard</title>
 </head>
 
 <body>
     <header class="row justify-content-cend ">
-        <h1>Weather Dashboard</h1>
+        <h1>Brewery Dashboard</h1>
     </header>
 
   <mainbody class="container">
-    <section class="row">      
-      <div class="col-15 col-md-2">
+    <section class="row">     
+      <div class="col-15 col-md-3">
           <div class="col-12 col-md-3:w-100 search_area" id="search_area">
             <form >
               <label for="location" class="label"><b>Search for a city:</b></label><br>
-              <input type="text" id="city_name" class="city_name w-100" name="city_name" value="Toronto">
+              <input type="text" id="city_name" class="city_name w-100" name="city_name" value="Los Angeles">
               <button type="button" id="search" class="btn btn-primary w-100">Search</button>
             </form> 
           </div>
-          <div class="col-12 col-md-3:w-100  history" id="history">
+          <div class="row" id="shop_list"> 
+          <div class="col-12 col-md-3:w-100  history" id="history"></div>
           </div>
         </div>
       
-      <div class="col-12 col-md-10">
-        <section class="row justify-content-start current" id="current">
-          <div class="col-12 col-md-7" id="current_detail">          
-            <h2 id="current_city"></h2>
-            <h3 id="current_temp">Temp: </h3>
-            <h3 id="current_wind">Wind: </h3>
-            <h3 id="current_humidity">Humidity: </h3>
-            <h3 id="current_UV">UV index: <span class="index" id="index"></span></h3>
+      <div class="col-12 col-md-9">
+        <section class="row justify-content-start shop" id="shop">
+          <div id="shop_detail">
+            <h2 id="name"></h2>
+            <p id="address"></p>            
+            <p id="phone"></p>          
+            <p id="type"></p>          
+            <a id="url" href="https://spotify.com"> </a>                  
           </div>
-          <div id="map" class="col-12 col-md-3 map"></div>
-    </section>
-        <section class="row justify-content-start forecast_header" id="forecast_header">
-          <h2><b>5-Day Forecast:</b></h2><br>
         </section>
-        <section class="row justify-content-around forecast" id="forecast">
-            <div class="card day_1 col-12 col-sm-6 col-lg-2" id="day_1">
-              <h3 id="day_1_date"></h3>
-              <img id="day_1_icon" class="icon" >
-              <div></div>
-              <p id="day_1_temp">Temp: </p><br>
-              <p id="day_1_wind">Wind: </p><br>
-              <p id="day_1_humidity">Humidity: </p><br>
-          </div>
-          <div class="card day_2 col-12 col-sm-6 col-lg-2" id="day_2">              
-            <h3 id="day_2_date"></h3>
-            <img id="day_2_icon" class="icon" >
-            <div></div>
-            <p id="day_2_temp">Temp: </p><br>
-            <p id="day_2_wind">Wind: </p><br>
-            <p id="day_2_humidity">Humidity: </p><br>
-          </div>
-          <div class="card day_3 col-12 col-sm-6 col-lg-2" id="day_3">   
-            <h3 id="day_3_date"></h3>
-            <img id="day_3_icon" class="icon" >
-            <div></div>
-            <p id="day_3_temp">Temp: </p><br>
-            <p id="day_3_wind">Wind: </p><br>
-            <p id="day_3_humidity">Humidity: </p><br>
-          </div>
-          <div class="card day_4 col-12 col-sm-6 col-lg-2" id="day_4">  
-            <h3 id="day_4_date"></h3>
-            <img id="day_4_icon" class="icon" >
-            <div></div>
-            <p id="day_4_temp">Temp: </p><br>
-            <p id="day_4_wind">Wind: </p><br>
-            <p id="day_4_humidity">Humidity: </p><br>
-          </div>
-            <div class="card day_5 col-12 col-sm-6 col-lg-2" id="day_5">   
-              <h3 id="day_5_date"></h3>
-              <img id="day_5_icon" class="icon" >
-              <div></div>
-              <p id="day_5_temp">Temp: </p><br>
-              <p id="day_5_wind">Wind: </p><br>
-              <p id="day_5_humidity">Humidity: </p><br>
-          </div>
-
+        <section class="row justify-content-start" id="forecast_header">
+          <div id="map" class="col-12 col-md-3 map"></div>
         </section>
       </div>
     </section>
